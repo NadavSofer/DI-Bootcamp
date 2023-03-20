@@ -1,0 +1,99 @@
+body {
+    background-image: url(/week-1/day-1/avengers/168069577-2f570d08-61d3-49d8-b7dd-c4b9192aaf68.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    font-family: roboto;
+}
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav img {
+    height: 5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+nav div {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    padding: 1rem;
+    margin-right: 2rem;
+    font-size: 200%;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: aliceblue;
+    margin: 2rem;
+    margin-top: 20rem;
+    width: 35%;
+    text-shadow: 2px 2px black;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+}
+
+footer i{
+    color: aliceblue;
+    font-size: 200%;
+    padding: 1.5rem;
+}
+
+/*--------------@media----------------*/
+
+/*----------------L----------------*/
+@media screen and (min-width: 922px) and (max-width: 1199px){
+    nav {
+        background-color: red;
+        color: white;
+    }
+
+    .text {
+        flex-direction: row;
+
+    }
+
+    .text h1 {
+        margin-right: 2rem;
+    }
+}
+
+/*----------------M----------------*/
+@media screen and (min-width: 768px) and (max-width: 921px){
+    nav {
+        background-color: lightgreen;
+        color: black;
+    }
+
+    .text h1 {
+        font-size: 25px;
+    }
+}
+
+/*----------------S----------------*/
+@media screen and (min-width: 600px) and (max-width: 767px){
+    nav {
+        background-color: yellow;
+        color: black;
+    }
+
+    .text h1 {
+        font-size: 35px;
+    }
+}

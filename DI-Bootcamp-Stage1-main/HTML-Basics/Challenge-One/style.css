@@ -1,0 +1,23 @@
+body {
+    background-color: #55ccff;
+    font-family: helvetica;
+}
+
+h1 {
+    font-family: none;
+}
+
+div {
+    width: 800px;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+
+}
+
+li::first-letter{
+    font-size: 150%;
+    font-weight: bold;
+}

@@ -1,0 +1,39 @@
+:root {
+    --bg: #364371;
+    --bg1: #5b7fbd;
+    --bg2: #b0cfff;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+#wrap {
+    width: 600px;
+}
+
+#nav {
+background-color: var(--bg2);
+padding: 10px;
+float: left;
+height: 415px;
+}
+
+#content {
+    background-color: #5b7fbd;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+#content li {
+    list-style: none;
+    
+}
+
+.copyright {
+    background-color: #364371;
+    padding-top: 5px;
+}

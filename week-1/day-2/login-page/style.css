@@ -1,0 +1,68 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: roboto;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 50.5rem;
+}
+
+main > *  {
+    width: 50%;
+}
+/*-------------------------------*/
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*-------------------------------*/
+.right {
+    background: linear-gradient(141deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 4%, rgb(26, 59, 165) 100%);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right i {
+    font-size: 10rem;
+    margin-left: 3rem;
+}
+
+.right h1, .right p {
+    margin: 0.5rem;
+}
+
+.right h1 {
+    font-size: 300%;
+}
+
+.right p {
+    font-size: 120%;
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem;
+    margin: 1rem;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+}
+
+.register i {
+    font-size: 2rem;
+    border: 2px solid aliceblue;
+    border-radius: 40%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 0.5rem 3rem;
+}

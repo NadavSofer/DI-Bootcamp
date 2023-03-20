@@ -1,0 +1,84 @@
+td, th {
+    padding: 0.5rem;
+}
+
+.ex2 {
+    border: 0.25rem solid #27c76b;
+    background-color: #c0f7d7;
+    width: fit-content;
+    padding: 2rem;
+    margin-left: 5rem;
+}
+
+/*------------*/
+
+.ex3 {
+    width: fit-content;
+}
+
+.ex3 div {
+    height: 5rem;
+    width: 2.5rem;
+    display: inline-block;
+}
+
+.ex3 div:first-child {
+    background-color: blue;
+}
+
+.ex3 div:nth-child(2) {
+    margin: 0 -4px;
+}
+
+.ex3 div:last-child {
+    background-color: red;
+}
+
+/*------------------------------*/
+
+.ex5 div:first-child li:nth-child(2){
+    color: blue;
+}
+
+.ex5 div:first-child li {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ex5 div:last-child p:first-child {
+    background-color: pink;
+    color: white;
+}
+
+.ex5 div:last-child p:last-child {
+    background-color: blue;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem;
+    width: fit-content;
+}
+
+/*----------------------------*/
+.aex1 {
+    background-color: grey;
+    padding: 1rem;
+    width: 15rem;
+}
+
+.aex1 > * {
+    height: 5rem;
+    width: 5rem;
+}
+
+.blue {
+    position: relative;
+    background-color: blue;
+}
+
+.orange {
+    position: absolute;
+    background-color: orange;
+    z-index: 1;
+    top: 107.5rem;
+    left: 2rem;
+}

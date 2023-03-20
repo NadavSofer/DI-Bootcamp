@@ -1,0 +1,33 @@
+body {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #8e7cc3;
+}
+
+.container {
+    display: flex;
+    margin: 1rem;
+    gap: 2rem;
+}
+
+.container > * {
+    padding: 1rem;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#orange {
+    background-color: orange;
+}

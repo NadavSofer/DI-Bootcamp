@@ -1,0 +1,128 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: roboto;
+    background-color: #dddddd;
+}
+
+/*--------------------------------------------*/
+nav {
+    width: 98.1%;
+    background-color: black;
+    padding: 1rem;
+}
+
+nav i {
+    font-size: 200%;
+    color: aliceblue;
+}
+
+nav .logo{
+    position: initial;
+}
+
+nav .logo:hover{
+    background-color: black;
+}
+
+nav a {
+    position: absolute;
+    right: 2rem;
+    top: 0.5rem;
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background-color: green;
+}
+
+/*--------------------------------------------*/
+
+h1 {
+    width: 15rem;
+    margin: 2rem auto;
+}
+
+
+
+
+table {
+    margin: 0 auto;
+}
+
+.content {
+    border: 10px #dddddd solid;
+    border-radius: 5px;
+    height: 23rem;
+    width: 15rem;
+}
+
+#Scottish {
+    background-image: url(/week-1/day-2/Shopping-Website/resources/scotland_bottle_550x825.webp);
+    background-size: cover;
+}
+
+#English {
+    background-image: url(/week-1/day-2/Shopping-Website/resources/England_bottle_550x825.webp);
+    background-size: cover;
+}
+
+#Irish {
+    background-image: url(/week-1/day-2/Shopping-Website/resources/Irish_bottle_550x825.webp);
+    background-size: cover;
+}
+
+#Welsh {
+    background-image: url(/week-1/day-2/Shopping-Website/resources/welsh_bottle_550x825.webp);
+    background-size: cover;
+}
+
+#Fish {
+    background-image: url(/week-1/day-2/Shopping-Website/resources/FishandChips_bottle_550x825.webp);
+    background-size: cover;
+}
+
+#London {
+    background-image: url(/week-1/day-2/Shopping-Website/resources/Underground_bottle_550x825.webp);
+    background-size: cover;
+}
+
+.text-box {
+    position: relative;
+    bottom: -6.5rem;
+    padding: 0.5rem;
+    background-color:rgb(0, 0, 0, 0.5);
+    height: 9rem;
+    color: aliceblue;
+}
+
+.text-box h3 {
+    margin: 0;
+}
+
+button {
+    border: none;
+    padding: 0.5rem;
+}
+
+button:hover {
+    background-color: #dddddd;
+}
+
+/*--------------------------------------------*/
+footer {
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem;
+    font-size: 1rem;
+    
+}
+
+footer span {
+    margin-right: 1rem;
+}

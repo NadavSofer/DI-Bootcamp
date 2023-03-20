@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2ac7f;
+    font-family: monospace;
+    text-align: center;
+}
+
+h1 {
+    font-style: italic;
+    font-weight: bold;
+    border-bottom: 5px dashed black;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+div {
+    background-color: #f5f5dc;
+    width: 685px;
+    margin: 0 auto;
+    border: 5px dashed black;
+}
+
+p {
+    padding: 5px;
+}
+
+li {
+    list-style: none;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+li::first-letter{
+    font-size: 150%;
+    font-weight: bold;
+}

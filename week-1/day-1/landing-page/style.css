@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    font-family: roboto;
+}
+
+nav {
+    background-color: #d7d7d7;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    padding: 1rem;
+    text-decoration: none;
+
+}
+
+nav a:first-child {
+    color: black;
+}
+
+nav a:last-child {
+    background-color: rgb(13, 98, 224);
+    color: aliceblue;
+}
+
+.banner {
+    width: 50%;
+    margin: 0 auto;
+    height: 30rem;
+    width: 100%;
+    text-align: center;
+    background-image: url(/week-1/day-1/landing-page/abstract-technology-banner-background.webp);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner h1 {
+    margin: 2rem;
+    color: aliceblue;
+}
+
+input, button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgb(13, 98, 224);
+    border: 1px rgb(81 132 175) solid;
+    color: white;
+}
+
+.content-box {
+    background-color: #d7d7d7;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+
+.box {
+    padding: 2rem;
+    margin: 4rem 0;
+    width: 20%;
+    
+
+}
+
+.box i {
+    font-size: 5rem;
+    padding: 1rem;
+    color: rgb(13, 98, 224);
+}
+
+.box h3{
+    margin: 0.5rem;
+}

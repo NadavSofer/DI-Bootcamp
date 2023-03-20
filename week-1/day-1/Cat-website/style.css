@@ -1,0 +1,27 @@
+span {
+    background-color: yellow;
+}
+
+.warning {
+    text-align: center;
+    border: 1px red solid;
+    color: red;
+    font-weight: bold;
+    width: 75.5%;
+    margin: 0 auto 1rem;
+}
+
+table {
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+img {
+    width: 30rem;
+    margin: 5rem 40%;
+    border: 0.5rem solid #eb6734;
+}

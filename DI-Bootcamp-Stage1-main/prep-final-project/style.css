@@ -1,0 +1,342 @@
+:root {
+    --light-bg: #45434e;
+    --dark-bg: #262626;
+    --base-text: #cdcdcd;
+    --alt-text: #8F8F8F;
+    --box-color: #5C4040;
+    --highlight: #68648F;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: roboto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--base-text);
+    font-size: 20px;
+}
+.light-bg {
+    background-color: var(--light-bg);
+}
+
+h2 {
+    padding: 2rem 0 0;
+}
+
+/*----------------banner----------------*/
+
+#banner .container {
+    width: 100%;
+    height: 35rem;
+    margin: 0 auto;
+    background-image: url(/resources/which-fromsoftware-soulsborne-game-is-the-hardest_feature.jpg);
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+#banner .container img {
+    opacity: 85%;
+    width: 50%;
+}
+
+/*----------------nav----------------*/
+
+nav {
+    background-color: var(--dark-bg);
+    position:sticky;
+    top: 0rem;
+    z-index: 1;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+nav li{
+    list-style: none;
+    display: inline;
+    width: 20%;
+    text-align: center;
+}
+
+nav li:hover {
+    background-color: var(--highlight);
+}
+
+nav li a {
+    text-decoration: none;
+    color: var(--base-text);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+#about {
+    padding: 2rem 15rem 5rem;
+}
+
+/*----------------about----------------*/
+
+#about img {
+    width: 50%;
+    border-radius: 50%;
+    height: 10rem;
+}
+
+#about .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+
+/*----------------games----------------*/
+
+#games {
+    width: 70%;
+    margin: 2rem auto;
+    padding-top: 2rem;
+}
+
+#games .container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+#games .game {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    width: 20rem;
+    border-radius: 10px;
+    background-color: var(--highlight);
+    justify-content: space-between;
+}
+
+#games .game img {
+    margin: 1rem;
+}
+
+#games .game p {
+    margin:0 1rem;
+    padding: 0 0 1rem;
+    text-align: center;
+}
+
+#games .game h5 {
+    margin:0.5rem 2rem;
+}
+
+.buttons {
+    text-align: center;
+    padding:  1rem;
+}
+
+.buttons a {
+    margin-right: 0.5rem;
+}
+
+button {
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: #b9b9b9;
+}
+
+#armored-store {
+    text-decoration: line-through;
+}
+
+#armored-store:hover {
+    background-color: #d8d8d8;
+    cursor: default;
+}
+
+/*----------------work----------------*/
+
+#work {
+
+    margin: 0 auto;
+    padding: 2rem 15rem 0;
+}
+
+#work .text-box {
+    display: grid;
+    grid: 1fr 1fr / 1fr 1fr;
+}
+
+#work img {
+    width: 85%;
+    grid-area: 1/2/2/2;
+    margin: 2rem 3rem 0;
+    border-radius: 5px;
+
+}
+
+.design {
+    margin-top: 2rem;
+}
+
+.lore {
+margin: 2rem 0 0;
+grid-area: 2/1/2/3;
+}
+
+/*----------------other----------------s*/
+
+#others {
+    padding: 2rem 5rem 0 15rem;
+}
+
+#others .container {
+    display: flex;
+    
+}
+
+#others .container .copy-box {
+    display: flex;
+    margin: 0 0 0 5rem;
+    gap: 1rem;
+}
+
+#others h5:first-of-type {
+    margin: 0.2rem 0 1rem;
+}
+
+#others .container h5 {
+    margin-bottom: 2rem;
+}
+
+.other-game img {
+    width: 12rem;
+    z-index: 1;
+}
+
+.other-game p{
+    transform: translateY(-3rem);
+    transition: 1s ease-in-out;
+    opacity: 0;
+
+}
+
+.other-game:hover p {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/*----------------footer----------------*/
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.fonts {
+    padding: 1rem;
+    font-size: 200%;
+}
+
+.fonts i{
+    color: var(--base-text);
+    transition: 0.5s ease-in-out;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.fonts i:hover{
+    background-color: var(--highlight);
+}
+
+.fonts :nth-child(2) {
+    margin: 0 5rem;
+}
+
+.trademark {
+    padding: 1rem 0;
+    font-size: 16px;
+}
+
+/*----------------width 1024 and below----------------*/ 
+
+@media screen and (max-width: 1024px) {
+
+    nav {
+        display: none;
+    }
+
+    #about, #games, #work, #others {
+        padding: 0 2rem 2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #banner img {
+        width: 100% !important;
+    }
+
+    #about .container, #work .text-box, #others .container, #others .container .copy-box {
+        display: block;
+    }
+
+    #about img {
+        margin: 2rem;
+        height: 10rem;
+        width: 13rem;
+    }
+
+    #work img {
+        margin: 2rem 0 0;
+    }
+
+    #others .container .copy-box {
+        margin: 0;
+    }
+
+    #others  p {
+        margin-top: 0;
+        margin: 2rem;
+        padding: 0rem 1rem 2rem;
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    #others .container > p {
+        padding: 0;
+    }
+
+}
+
+/*----------------width 480 and below----------------*/ 
+
+@media screen and (max-width: 480px) {
+    .fonts i {
+        padding: 0;
+    }
+
+    #about img {
+        margin: 0rem;
+    }
+}
