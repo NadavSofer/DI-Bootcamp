@@ -43,7 +43,7 @@ nav a:hover {
 /*--------------------------------------------*/
 main {
     width: 100%;
-    background-image: url(/week-1/day-2/Shopping-Website/resources/Wildflower-meadow-1df0d99.jpg);
+    background-image: url(./resources/Wildflower-meadow-1df0d99.jpg);
     height: 30rem;
     background-size: cover;
     display: flex;

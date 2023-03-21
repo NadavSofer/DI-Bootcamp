@@ -62,32 +62,32 @@ table {
 }
 
 #Scottish {
-    background-image: url(/week-1/day-2/Shopping-Website/resources/scotland_bottle_550x825.webp);
+    background-image: url(./resources/scotland_bottle_550x825.webp);
     background-size: cover;
 }
 
 #English {
-    background-image: url(/week-1/day-2/Shopping-Website/resources/England_bottle_550x825.webp);
+    background-image: url(./resources/England_bottle_550x825.webp);
     background-size: cover;
 }
 
 #Irish {
-    background-image: url(/week-1/day-2/Shopping-Website/resources/Irish_bottle_550x825.webp);
+    background-image: url(./resources/Irish_bottle_550x825.webp);
     background-size: cover;
 }
 
 #Welsh {
-    background-image: url(/week-1/day-2/Shopping-Website/resources/welsh_bottle_550x825.webp);
+    background-image: url(./resources/welsh_bottle_550x825.webp);
     background-size: cover;
 }
 
 #Fish {
-    background-image: url(/week-1/day-2/Shopping-Website/resources/FishandChips_bottle_550x825.webp);
+    background-image: url(./resources/FishandChips_bottle_550x825.webp);
     background-size: cover;
 }
 
 #London {
-    background-image: url(/week-1/day-2/Shopping-Website/resources/Underground_bottle_550x825.webp);
+    background-image: url(./resources/Underground_bottle_550x825.webp);
     background-size: cover;
 }
 

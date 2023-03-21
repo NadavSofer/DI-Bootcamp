@@ -1,0 +1,136 @@
+body {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    height: 20rem;
+    width: 50%;
+    margin: 0 auto;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px black solid;
+}
+
+.Exercise1 .container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.red {
+    background-color: rgb(206, 42, 42);
+}
+
+.blue {
+    background-color: rgb(47, 47, 190);
+}
+
+.yellow {
+    background-color: #e6e63b;
+    grid-column-end: span 2;
+}
+/*-------------------------*/
+.Exercise2 .item1 {
+    grid-area: header;
+    background-color: rgb(67, 201, 201);
+}
+.Exercise2 .item2 {
+    grid-area: hero;
+    background-color: lavender;
+}
+.Exercise2 .item3 {
+    grid-area: sidebar;
+    background-color: rgb(154, 206, 75);
+}
+.Exercise2 .item4 {
+    grid-area: main;
+    background-color: #e6e63b;
+}
+.Exercise2 .item5 {
+    grid-area: extra;
+    background-color: grey;
+}
+.Exercise2 .item6 {
+    grid-area: images;
+    background-color: green;
+}
+.Exercise2 .item7 {
+    grid-area: posts;
+    background-color: pink;
+}
+.Exercise2 .item8 {
+    grid-area: footer;
+    background-color: orange;
+}
+
+.Exercise2 .container {
+    grid-template-areas: 
+    'header header header header'
+    'hero hero main main'
+    'hero hero main main'
+    'sidebar sidebar main main'
+    'sidebar sidebar extra extra'
+    'images images images posts'
+    'footer footer footer footer'
+    ;
+}
+
+/*-------------------------------*/
+.item1, .item6 {
+    background-color: #b8336a;
+}
+
+.item2, .item7 {
+    background-color: #726da8;
+}
+
+.item3, .item8 {
+    background-color: #7c8cc4;
+}
+
+.item4 {
+    background-color: #9fd2db;
+}
+
+.item5 {
+    background-color: #c490d2;
+}
+
+.Exercise3 .item1 {
+    grid-area: header;
+}
+.Exercise3 .item2 {
+    grid-area: hero;
+}
+.Exercise3 .item3 {
+    grid-area: sidebar;
+}
+.Exercise3 .item4 {
+    grid-area: main;
+}
+.Exercise3 .item5 {
+    grid-area: extra;
+}
+.Exercise3 .item6 {
+    grid-area: images;
+}
+.Exercise3 .item7 {
+    grid-area: posts;
+}
+.Exercise3 .item8 {
+    grid-area: footer;
+}
+
+.Exercise3 .container {
+    grid-template-areas: 
+    'header header header'
+    'hero sidebar main'
+    'hero extra extra'
+    'images images posts'
+    'footer footer footer'
+    ;
+}
+
+.Exercise3 {
+    margin-bottom: 5rem;
+}
