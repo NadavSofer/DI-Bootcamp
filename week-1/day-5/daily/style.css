@@ -1,0 +1,131 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: lightgrey;
+}
+
+.container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition:all 0.3s ease;
+    margin: 1rem;
+    font-size: 200%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.box {
+    flex: 1;
+    transition:all 0.3s ease;
+    text-align: center;
+    padding: 6rem 0;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
+.fade {
+    background-color: #676470;
+}
+.fade:hover {
+    opacity: 0.5;
+}
+
+.color {
+    background-color: red;
+}
+.color:hover {
+    background-color: blue;
+}
+
+.shrink {
+    background-color: aqua;
+}
+
+.shrink:hover {
+    transform: scale(0.8);
+}
+
+.rotate {
+    background-color: yellow;
+}
+
+.rotate:hover {
+    transform: rotate(2turn);
+}
+
+.circle {
+    background-color: purple;
+}
+
+.circle:hover {
+    border-radius: 50%;
+}
+
+.shadow {
+    background-color: brown;
+}
+
+.shadow:hover {
+    box-shadow: 0.5rem 0.5rem black;
+}
+
+.swing {
+    background-color: green;
+}
+
+@keyframes shake-horizontal {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+    }
+    80% {
+        -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+    }
+    90% {
+        -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+    }
+}
+
+
+.swing:hover {
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+.border {
+    background-color: black;
+}
+
+.border:hover {
+    border: 1rem aqua solid;
+}
+
+.grow {
+    background-color: indianred;
+}
+
+.grow:hover {
+    transform: scaley(2);
+}
