@@ -120,7 +120,6 @@
 # Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
 
 # topping_list = []
-# price = 10
 # while (1):
 #     user_in = input('add toppings, type quit when you\'re done: ')
 #     if user_in == 'quit':
@@ -131,6 +130,37 @@
 #         print(f'your toppings are: {topping_list}')
 
 
+# Exercise 9:
+
+# total_price = 0 
+# ages = [('person', 2), ('person2', 12), ('person3', 40)]
+
+# for name, age in ages:
+#     if age < 3:
+#         continue
+#     elif 3 <= age <= 12:
+#         total_price += 10
+#     else:
+#         total_price+= 15
+
+# print(total_price)
+
+# teens = ['thing1', 'thing2', 'thing3']
+# teen_age =[]
+
+# for teen in teens:
+#     age = input(f'{teen}, what is your age?: ')
+#     age_int = int(age)
+#     info = teen, age_int
+#     teen_age.append(info)
+
+# can_enter =[]
+# for name, age in teen_age:
+#     if 16 < age < 21:
+#         continue
+#     can_enter.append(name)
+
+# print(f'{can_enter}, can enter')
 
 # daily ----------------------------------
 
@@ -164,3 +194,4 @@
 #     out.append(i)
 # double_word =''.join(out)
 # print(double_word)
+
