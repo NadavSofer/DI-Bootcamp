@@ -125,13 +125,13 @@
 #         dict_char[char].append(i)
 
 
-# print(dict_char)
+# # print(dict_char)
 
 
-# Challenge 2
-# Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
-# Sort the list in alphabetical order.
-# Return “Nothing” if you can’t afford anything from the store.
+# # Challenge 2
+# # Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
+# # Sort the list in alphabetical order.
+# # Return “Nothing” if you can’t afford anything from the store.
 
 
 # items_purchase = {
@@ -146,10 +146,34 @@
 
 
 # can_afford = []
-# for i in items_purchase:
-#     if int(wallet[1:].replace(',', '')) >= int(items_purchase[i][1:].replace(',', '')):
-#         can_afford.append(i)
-# if not(len(can_afford)):
-#     print("Nothing")
+# # for i in items_purchase:
+# #     if int(wallet[1:].replace(',', '')) >= int(items_purchase[i][1:].replace(',', '')):
+# #         can_afford.append(i)
+# # if not(len(can_afford)):
+# #     print("Nothing")
+# # else:
+# #     print(can_afford)
+
+
+# wallet_up = wallet.strip('$')
+# wallet_up = wallet_up.replace(',', '')
+# wallet = int(wallet_up) 
+
+# for item, price in items_purchase.items():
+#     price_up = price.strip('$')
+#     price_up = price_up.replace(',', '')
+#     items_purchase[item] = int(price_up) 
+
+#     if items_purchase[item] <= wallet:
+#         can_afford.append(item)
+#         wallet -= items_purchase[item]
+
+# if len(can_afford) == 0:
+#     print('nothing')
 # else:
+#     can_afford.sort()
 #     print(can_afford)
+#     print(wallet)
+
+# word = '$$1'
+# print(word.strip('$'))
