@@ -139,9 +139,9 @@ import re
 #         msg += 'Going out is choosing death'
 #     return msg
 
-# print(main())
+# # print(main())
 
-#Daily-------------------------------------
+# #Daily-------------------------------------
 
 # base_str = "7i3Tsih%xi #sM $a #t%^r!"
 # base_list = list(base_str)
@@ -157,16 +157,55 @@ import re
 #             count += 1
 #     return res
 
-
+# # matrix(base_list)
 
 # def decrypt(list):
 #     out = []
 #     for item in list:
+#         print(item)
 #         for word in item:
 #             if word.isalpha():
-#                 out += word
+#                 out.append(word)
 #     return out
 
 
 # end_res = ''.join(decrypt(matrix(base_list)))
 # print(end_res)
+
+# base_str = """7i3
+# Tsi
+# h%x
+# i #
+# sM 
+# $a 
+# #t%
+# ^r!"""
+# base_list = list(base_str)
+
+
+# col1 = base_list[0::4]
+# col2 = base_list[1::4]
+# col3 = base_list[2::4]
+
+
+# def process(column: list[str]):
+#     msg = ''
+#     non_alpha = 0
+
+#     for char in column:
+#         if char.isalpha():
+#             msg += char
+        
+#     else:
+#         non_alpha  +=1
+#         if non_alpha == 2 and msg[-1] != ' ':
+#             msg += ' '
+
+#     return msg
+
+
+# msg1 = process(col1)
+# msg2 = process(col2)
+# msg3 = process(col3)
+
+# print(msg1 + msg2 + msg3)

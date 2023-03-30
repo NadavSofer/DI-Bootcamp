@@ -124,20 +124,42 @@
 
 #------------------------------------------------->
 
-# add_two = lambda num1, num2: num1 + num2
+add_two = lambda num1, num2: num1 + num2
 
-# print(add_two(2, 2))
+print(add_two(2, 2))
 
-# list1 = [1,2,3,4,5]
+list1 = [1,2,3,4,5]
 
-# multi_two = lambda num: num * 2
+num_power2 = list(map(lambda n: n**2, list1))
 
-# multied = list(map(multi_two, list1))
+multi_two = lambda num: num * 2
 
-# print(multied)
+multied = list(map(multi_two, list1))
 
-# words = ['thing1', 'thing2', 'thing3']
+print(multied)
 
-# cpital = list(map(lambda word: word.capitalize(), words))
+words = ['thing1', 'thing2', 'thing3']
 
-# print(cpital)
+cpital = list(map(lambda word: word.capitalize(), words))
+
+print(cpital)
+
+#-------------------------------------->
+from functools import reduce
+
+num_sum = reduce(lambda n1, n2: n1 + n2, list1)
+
+
+list2 = [ 5, 4, 3, 2 ,1]
+
+
+def cal (num1, num2):
+    res = num1 ** 2 + num2 ** 3
+    return res
+
+calculated = reduce(cal, list2)
+print(calculated)
+
+odd = list(filter(lambda n: n % 2 != 0, list))
+
+print(odd)
