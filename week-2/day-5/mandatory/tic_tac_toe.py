@@ -48,11 +48,11 @@ def player_input():
         user_in_column = input(f'player {player}, enter column (1-3): ')
         user_in_row = input(f'player {player}, enter row (1-3): ')
 
-        # if user_in_column not in ['1', '2', '3'] and user_in_row not in ['1', '2', '3']:
-        #     print('invalid piece')
-        #     player_counter += 1
+        if user_in_column not in ['1', '2', '3'] and user_in_row not in ['1', '2', '3']:
+            print('invalid piece')
+            player_counter += 1
 
-        if board[int(user_in_column)-1][int(user_in_row)-1] == '-':
+        elif board[int(user_in_column)-1][int(user_in_row)-1] == '-':
             board[int(user_in_column)-1][int(user_in_row)-1] = player
 
         else:
