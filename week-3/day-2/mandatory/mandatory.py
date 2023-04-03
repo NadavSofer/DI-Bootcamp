@@ -69,3 +69,68 @@ thing1 = Dog('thing1', 5, 40)
 thing2 = Dog('thing2', 5, 50)
 
 # print(thing1.fight(thing2))
+
+# EP+ Exercise 1 : Family
+
+class Family:
+    members = [
+    {'name':'Michael','age':35,'gender':'Male','is_child':False},
+    {'name':'Sarah','age':32,'gender':'Female','is_child':False}
+    ]
+    last_name = 'steve'
+    presentation_out = []
+    def born(self, **kwargs):
+        self.members.append(kwargs)
+
+    def is_18(self):
+        out =[]
+        for member in self.members:
+            if (member['age'])> 18:
+                out.append(member['name'])
+        return out
+
+    def family_presentation(self):
+        
+        for member in self.members:
+            self.presentation_out.append(member['name'] + ' ' + self.last_name)
+        return self.presentation_out
+
+
+# steve = Family()
+
+# steve.born(name = 'thing', age = 2, gender = 'Male', is_child = True)
+
+# print(steve.is_18())
+
+# print(steve.family_presentation())
+
+class TheIncredibles(Family):
+
+    members = [
+    {'name':'Michael','age':35,'gender':'Male','is_child':False,'power': 'fly','incredible_name':'MikeFly'},
+    {'name':'Sarah','age':32,'gender':'Female','is_child':False,'power': 'read minds','incredible_name':'SuperWoman'}
+    ]
+
+    def use_power(self):
+        for member in self.members:
+            if member['age'] > 18:
+                print(member['name']+ ': ' + member['power'])
+
+    def incredible_presentation(self):
+        out = []
+        out = self.family_presentation()
+        
+        for member in self.members:
+            out.append(member['incredible_name'])
+            out.append(member['power'])
+        return out
+
+
+
+inc = TheIncredibles()
+
+inc.use_power()
+
+inc.born(name = 'jack', age = 2, gender = 'Male', is_child = True, power = 'Unknown Power', incredible_name = 'jackjack')
+
+print(inc.incredible_presentation())
