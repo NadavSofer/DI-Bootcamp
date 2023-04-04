@@ -100,57 +100,68 @@
 # show_time()
 
 # Daily Challenge - Circle-------------------------------------------
-from math import pi
+# from math import pi
 
-class Circle:
-    def __init__(self, radius=None, diameter=None) -> None:
-        if radius is not None:
-            self.radius = radius
-            self.diameter = 2 * radius
-        elif diameter is not None:
-            self.diameter = diameter
-            self.radius =  diameter / 2
+# class Circle:
+#     def __init__(self, radius=None, diameter=None) -> None:
+#         if radius is not None:
+#             self.radius = radius
+#             self.diameter = 2 * radius
+#         elif diameter is not None:
+#             self.diameter = diameter
+#             self.radius =  diameter / 2
 
-    def area(self):
-        area_out = pi * self.radius ** 2
-        return area_out
+#     def area(self):
+#         area_out = pi * self.radius ** 2
+#         return area_out
     
-    def __add__(self, other_circle):
-        add_out = self.area() + other_circle.area()
-        return add_out
+#     def __add__(self, other_circle):
+#         add_out = self.area() + other_circle.area()
+#         return add_out
 
-    def __gt__(self, other_circle):
-        return self.area() > other_circle.area()
+#     def __gt__(self, other_circle):
+#         return self.area() > other_circle.area()
     
-    def __lt__(self, other_circle):
-        return self.area() < other_circle.area()
+#     def __lt__(self, other_circle):
+#         return self.area() < other_circle.area()
     
-    def __eq__(self, other_circle):
-        return self.area() == other_circle.area()
+#     def __eq__(self, other_circle):
+#         return self.area() == other_circle.area()
     
-    def sort_circle(self, *other):
-        list_out = [self.area()]
-        for item in other:
-            list_out.append(item.area())
-        sorted_list_out = sorted(list_out)
-        return sorted_list_out
+#     def sort_circle(self, *other):
+#         list_out = [self.area()]
+#         for item in other:
+#             list_out.append(item.area())
+#         sorted_list_out = sorted(list_out)
+#         return sorted_list_out
 
 
-circle1 = Circle(diameter = 2.0)
-circle2 = Circle(diameter = 3.0)
-circle3 = Circle(diameter = 5.0)
+# circle1 = Circle(diameter = 2.0)
+# circle2 = Circle(diameter = 3.0)
+# circle3 = Circle(diameter = 5.0)
 
 
-print(circle1.area())
-print(circle1 + circle2)
+# print(circle1.area())
+# print(circle1 + circle2)
 
 
-print(circle1.sort_circle(circle2, circle3))
+# print(circle1.sort_circle(circle2, circle3))
 # Daily Challenge: Translator -----------------------------------------
 
+from translate import Translator
+translator = Translator(to_lang="en", from_lang='fr')
+text = "Bonjour Au revoir Bienvenue A bientôt"
+translated_text = translator.translate(text)
+print(translated_text)  # Output: ¡Hola, cómo estás hoy!
 
-# from translate import Translator
+
+french_words= ["Bonjour", "Au revoir", "Bienvenue", "A bientôt"] 
 
 
+translated_dict = {}
 
-# string = 'hello'
+
+for word in french_words:
+    translated_dict[word] = translator.translate(word)
+
+print(translated_dict)
