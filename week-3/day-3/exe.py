@@ -38,20 +38,22 @@
 
 # -----------------------------------------------------------------------------
 
-class Object:
-    num = 0
-    objects = {}
+# class Object:
+#     num = 0
+#     objects = {}
 
-    def __init__(self) -> None:
-        Object.objects[Object.num] = self
-        Object.num += 1
+#     def __init__(self) -> None:
+#         Object.objects[Object.num] = self
+#         Object.num += 1
 
 
-    @classmethod
-    def find_object(cls, id:int):
-        if id in cls.objects:
-            retrieved = cls.objects[id]
-            print(retrieved)
-            return retrieved
-        else:
-            print('not here')
+#     @classmethod
+#     def find_object(cls, id:int):
+#         if id in cls.objects:
+#             retrieved = cls.objects[id]
+#             print(retrieved)
+#             return retrieved
+#         else:
+#             print('not here')
+
+

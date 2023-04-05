@@ -100,68 +100,90 @@
 # show_time()
 
 # Daily Challenge - Circle-------------------------------------------
-# from math import pi
+from math import pi
 
-# class Circle:
-#     def __init__(self, radius=None, diameter=None) -> None:
-#         if radius is not None:
-#             self.radius = radius
-#             self.diameter = 2 * radius
-#         elif diameter is not None:
-#             self.diameter = diameter
-#             self.radius =  diameter / 2
-
-#     def area(self):
-#         area_out = pi * self.radius ** 2
-#         return area_out
+class Circle:
+    def __init__(self, radius=None, diameter=None) -> None:
+        if radius is not None:
+            self.radius = radius
+            self.diameter = 2 * radius
+        elif diameter is not None:
+            self.diameter = diameter
+            self.radius =  diameter / 2
+    @property
+    def area(self):
+        area_out = pi * self.radius ** 2
+        return area_out
     
-#     def __add__(self, other_circle):
-#         add_out = self.area() + other_circle.area()
-#         return add_out
+    def __add__(self, other_circle):
+        added = self.radius + other_circle.radius
+        new_circle = Circle(radius = added)
+        return new_circle
 
-#     def __gt__(self, other_circle):
-#         return self.area() > other_circle.area()
+    def __gt__(self, other_circle):
+        return self.radius > other_circle.radius
     
-#     def __lt__(self, other_circle):
-#         return self.area() < other_circle.area()
+    def __lt__(self, other_circle):
+        return self.radius < other_circle.radius
     
-#     def __eq__(self, other_circle):
-#         return self.area() == other_circle.area()
+    def __eq__(self, other_circle):
+        return self.radius == other_circle.radius
     
-#     def sort_circle(self, *other):
-#         list_out = [self.area()]
-#         for item in other:
-#             list_out.append(item.area())
-#         sorted_list_out = sorted(list_out)
-#         return sorted_list_out
+    def sort_circle(self, *other):
+        list_out = [self]
+        for item in other:
+            list_out.append(item)
+        sorted_list_out = sorted(list_out)
+        return sorted_list_out
+
+    def __repr__(self) -> str:
+        return f'radius: {self.radius} diameter: {self.diameter}'
+
+circle1 = Circle(diameter = 2.0)
+circle2 = Circle(diameter = 3.0)
+circle3 = circle1 + circle2
 
 
-# circle1 = Circle(diameter = 2.0)
-# circle2 = Circle(diameter = 3.0)
-# circle3 = Circle(diameter = 5.0)
-
-
-# print(circle1.area())
+print(circle3.area)
 # print(circle1 + circle2)
 
 
-# print(circle1.sort_circle(circle2, circle3))
+print(circle1.sort_circle(circle3, circle2))
 # Daily Challenge: Translator -----------------------------------------
 
-from translate import Translator
-translator = Translator(to_lang="en", from_lang='fr')
-text = "Bonjour Au revoir Bienvenue A bientôt"
-translated_text = translator.translate(text)
-print(translated_text)  # Output: ¡Hola, cómo estás hoy!
+# from translate import Translator
+# translator = Translator(to_lang="en", from_lang='fr')
+# text = "Bonjour Au revoir Bienvenue A bientôt"
+# translated_text = translator.translate(text)
+# print(translated_text)  # Output: ¡Hola, cómo estás hoy!
 
 
-french_words= ["Bonjour", "Au revoir", "Bienvenue", "A bientôt"] 
+# french_words= ["Bonjour", "Au revoir", "Bienvenue", "A bientôt"] 
 
 
-translated_dict = {}
+# translated_dict = {}
 
 
-for word in french_words:
-    translated_dict[word] = translator.translate(word)
+# for word in french_words:
+#     translated_dict[word] = translator.translate(word)
 
-print(translated_dict)
+# print(translated_dict)
+
+
+
+# class Circle:
+#     def __init__(self, size:float, type: str) -> None:
+#         if type == 'radius':
+#             self.radius = size
+#             self.diameter = size * 2
+#         elif type == 'diameter':
+#             self.diameter = size
+#             self.radius = size / 2
+#         else:
+#             raise ValueError('invalid type of input')
+
+
+
+
+# c1 = Circle(2.0, 'diameter')
+# c2 = Circle(6.0, 'radius')
