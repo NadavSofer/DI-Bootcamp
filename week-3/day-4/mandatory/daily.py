@@ -2,8 +2,7 @@ from collections import Counter
 
 stranger = 'the_stranger.txt'
 
-with open(stranger, 'r') as file:
-    new_text = file.readlines()
+
 
 class Text:
     def __init__(self, text=None) -> None:
@@ -18,24 +17,24 @@ class Text:
         return self.text_list.count(word)
 
     def most_common(self):
-        
         most_common_list = Counter(self.text_list).most_common()
         most_common_word = most_common_list[0][0]
         return most_common_word
 
 
     def unique_words(self):
-        unique_words_list = []
-        for word in self.text_list:
-            if self.frequency(word) == 1:
-                unique_words_list.append(word)
-        return unique_words_list
+        return list(set(self.text_list))
 
     @classmethod
-    def from_file(self, other):
-        Text.from_file('the_stranger.txt')
+    def from_file(self, path):
+        with open(path, 'r') as file:
+            new_text_list = file.readlines()
+            joined_new_text = ' '.join(new_text_list)
+            return Text(joined_new_text)
 
 text = Text()
+
+print(Text.from_file(stranger))
 
 print(text.frequency('as'))
 print(text.unique_words())
