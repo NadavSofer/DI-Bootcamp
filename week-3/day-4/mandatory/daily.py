@@ -34,7 +34,12 @@ class Text:
 
 text = Text()
 
-print(Text.from_file(stranger))
+stranger_text = Text.from_file(stranger)
+
 
 print(text.frequency('as'))
 print(text.unique_words())
+
+print('\n')
+print(stranger_text.most_common())
+print(stranger_text.frequency('the'))
