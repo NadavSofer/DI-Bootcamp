@@ -13,7 +13,7 @@ def anagram_for_user(file):
             if type(test) == list:
                 if len(test) > 0:
                     print(
-f"""\nYOUR WORD :{user_in}
+f"""\nYOUR WORD: {user_in}
 this is a valid English word.
 Anagrams for your word: {out_str}\n""")
                 else:
