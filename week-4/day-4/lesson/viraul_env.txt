@@ -1,0 +1,19 @@
+1. venv (in terminal): python3 -m venv my_env
+
+2. activate my_env (in terminal --> in cmd because powershell is weird):
+    for powershell:
+        my_env\Script\activate.bat
+        my_env\Script\activate.ps1
+
+    for cmd:
+        my_env\Script\activate
+
+3. make requirements.txt (in terminal):
+    pip freeze > requirements.txt
+
+4. install psycopg2 (in terminal):
+
+5.  update requirements.txt (in terminal):
+    pip freeze > requirements.txt
+
+6. make .gitignore file and exclude my_env by writing the name of the file
