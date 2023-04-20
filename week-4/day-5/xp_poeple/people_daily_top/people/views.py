@@ -12,3 +12,13 @@ people = [
 
 
 
+def people(request):
+    context = {}
+    return render(request, 'people.html', context)
+
+def person(request, id):
+    context = {}
+    for thing_id, item in enumerate(people):
+        if id == thing_id:
+            context = {'name': item[thing_id]['name']}
+    return render(request, 'person.html', context)
