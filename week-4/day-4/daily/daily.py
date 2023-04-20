@@ -5,7 +5,7 @@ import psycopg2
 
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
-PASSWORD = 'Ns9517530809'
+PASSWORD = ''
 DATABASE = 'REST_COUNTRIES'
 
 connection = psycopg2.connect(host = HOSTNAME, user = USERNAME, password = PASSWORD, dbname = DATABASE)

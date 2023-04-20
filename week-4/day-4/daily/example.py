@@ -53,7 +53,7 @@ def preprocess(instances: list[dict]):
 
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
-PASSWORD = 'Ns9517530809'
+PASSWORD = ''
 DATABASE = 'REST_COUNTRIES'
 
 

@@ -3,7 +3,7 @@ import datetime
 
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
-PASSWORD = 'Ns9517530809'
+PASSWORD = ''
 DATABASE = 'hollywood'
 
 connection = psycopg2.connect(host = HOSTNAME, user = USERNAME, password = PASSWORD, dbname = DATABASE)
