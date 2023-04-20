@@ -1,0 +1,43 @@
+1. make environment 
+
+2. install django in environment
+
+3. create project:
+django-admin startproject mysite
+
+if this ^^^^ doesn't work: 
+python -m django startproject mysite
+
+4. rename the outer file to whatever_top
+
+5. python manage.py startapp polls
+
+6. add polls to setting.py 
+
+7. python manage.py runserver
+
+STARTING WITH DJANGO
+
+
+Create Project
+1. [terminal] django-admin startproject mysite 
+              OR python django startproject mysite 
+
+
+2. cd into mysite
+
+manage.py is the project runner (runs server, runs tests)
+
+3. python manage.py startapp polls
+
+4. Add "polls" into INSTALLED_APPS in mysite.settings.py
+
+5. Inside polls.views.py create a view (example, index)
+
+6. Inside mysite.urls.py 
+    - from polls.views import index 
+    - add a path to the index view (example, path("index/", index))
+
+7. create the templates folder insider the app (polls)
+
+8. Inside the templates folder create templates/html files (index.html)
