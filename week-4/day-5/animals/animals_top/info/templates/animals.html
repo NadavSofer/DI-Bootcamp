@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>family</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Animals</title>
     <style>
         body{
             background-color: rgb(36, 36, 44);
             color:aliceblue
         }
-        
+
         a{
             color: aliceblue;
         }
+
     </style>
 </head>
 <body>
-    <h1>hey</h1>
-    {%for family in family %} 
-    <br>
-        <a href="{% url 'animal_specific' family.id%}">{{family.name}}</a> 
-    </br>
+
+    {%for animal in animals %}
+        <br>
+            <a href="{% url 'animal_specific' animal.id%}">{{animal.name}}</a> 
+        <br>
     {%endfor %}
+    
 </body>
 </html>

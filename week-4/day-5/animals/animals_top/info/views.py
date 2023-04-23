@@ -1,22 +1,28 @@
 from django.shortcuts import render
 import json
+from.models import Animal, Family
 # Create your views here.
 
 
-def animal(request,id):
-    f = open('static/animals.json')
-    data = json.load(f)
-    context = {'name': data['animals'][id]['name'], 'legs': data['animals'][id]['legs'], 'weight': data['animals'][id]['weight'], 'height': data['animals'][id]['height'], 'speed': data['animals'][id]['speed']}
-    f.close()
+def all_animals(request): 
+    animals = Animal.objects.all()
+    context = {'animals': animals}
+    return render(request, 'animals.html', context)
+
+
+def animal(request, id: int):
+    instance = Animal.objects.get(id=id)
+    context = {'animal': instance}
     return render(request, 'animal.html', context)
 
-def family(request,id):
-    f = open('static/animals.json')
-    data = json.load(f)
-    context = {'family_name': data['families'][id]['name']}
-    f.close()
+
+def family(request, id: int):
+    family_instance = Animal.objects.filter(family_id=id)
+    context = {'family': family_instance}
     return render(request, 'family.html', context)
 
 
-
-
+# falconidae = Family.objects.get(name='Falconidae')
+# Scorpaenidae = Family.objects.get(name='Scorpaenidae')
+# animal = Animal(name='Falcon',legs=2, weight=1.67, height=0.5, speed=110, family=falconidae)
+# animal = Animal(name='Red lionfish',legs=0, weight=1.67, height=0.1, speed=24, family=Scorpaenidae)

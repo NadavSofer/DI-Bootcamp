@@ -7,12 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(36, 36, 44);
+            color:aliceblue
+        }
+
+        a{
+            color: aliceblue;
+        }
+    </style>
 </head>
 <body>
-    <h1>name: {{name}}</h1>
-    <h3>number of legs: {{legs}}</h3>
-    <h3>weight: {{weight}}</h3>
-    <h3>height: {{height}}</h3>
-    <h3>speed: {{speed}}</h3>
+    <h1>name: {{animal.name}}</h1>
+    <h3>number of legs: {{animal.legs}}</h3>
+    <h3>weight: {{animal.weight}}</h3>
+    <h3>height: {{animal.height}}</h3>
+    <h3>speed: {{animal.speed}}</h3>
+    <a href="{% url 'all_animals' %}">back</a>
+
 </body>
 </html>

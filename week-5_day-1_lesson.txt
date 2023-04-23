@@ -1,0 +1,26 @@
+databases integration
+
+1. copy this and fill it up: 
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': '<db_name>',
+            'USER': '<db_username>', ------> postgres
+            'PASSWORD': '<password>',
+            'HOST': '<db_hostname_or_ip>',
+            'PORT': '<db_port>', -----> 5432
+        }
+    }
+
+2. make the Database if needed
+
+
+3. run python manage.py migrate:
+    make sure you have psycopg2 installed 
+
+python manage.py makemigrations
+
+python manage.py shell
+    import models:
+        from info.models import databases
