@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+    <form action="/add_gif/" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <input type="submit" value="OK">
+    </form>
+    <a href="{% url 'homepage' %}">back</a>
+{%endblock%}
