@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+{% for gif in gifs_list %}
+    <br>
+    <a href="{% url 'view_gif' gif.id %}">{{ gif.title}}</a> 
+    <img src="{{gif.url}}" alt="a gif">
+    <br>
+{% endfor %}
+{%endblock%}
+
+<!-- <a href="{% url 'animal_specific' animal.id%}">{{animal.name}}</a>  -->

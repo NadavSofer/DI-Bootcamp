@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from finder.views import person_name, person_number
+from finder.views import person_name, person_number, search_person, profile_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('find_by_name/<str:name>/', person_name),
-    path('find_by_phone/<str:phone>/', person_number)
+    path('find_by_phone/<str:phone>/', person_number),
+    path('persons/<str:search_value>/', search_person),
+    path('profiles/<str:search_value>/', profile_view)
 ]
+55

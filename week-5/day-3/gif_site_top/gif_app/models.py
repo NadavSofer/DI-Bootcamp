@@ -10,7 +10,7 @@ class Gif_model(models.Model):
         return self.title
 
 class Category_Model(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     gifs = models.ManyToManyField(Gif_model, blank = True)
 
     def __str__(self) -> str:

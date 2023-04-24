@@ -34,14 +34,45 @@ def add_gif(request):
 
 
 def add_category(request):
-    if request.method == "POST":
-        form = CategoryForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
+    try:
+        if request.method == "POST":
+            form = CategoryForm(request.POST)
+            if form.is_valid():
+                name = form.cleaned_data['name']
 
-            new_gif = Category_Model(name=name)
-            new_gif.save()
-            return render(request, "add_category.html", {"form": CategoryForm})
-    else:
-        form = GifForm()
-    return render(request, "add_category.html", {"form": CategoryForm})
+                new_gif = Category_Model(name=name)
+                new_gif.save()
+                return render(request, "add_category.html", {"form": CategoryForm})
+        else:
+            form = GifForm()
+        return render(request, "add_category.html", {"form": CategoryForm})
+    except:
+        pass
+
+
+def view_all(request):
+    gifs_list = Gif_model.objects.all()
+    context = {'gifs_list': gifs_list}
+    return render(request, "view_all.html", context)
+
+
+def view_by_gif(request, id:int):
+    instance = Gif_model.objects.get(id=id)
+    context = {'gif': instance}
+    return render(request, "view_gif.html", context)
+
+
+# def view_by_category(request, id:int):
+#     gifs_list = Gif_model.objects.all()
+#     category_list = Category_Model.objects.all()
+#     for item in category_list:
+#         if id == item.id:
+#             instance = Gif_model.objects.filter(id=id)
+#             context = {'category': instance}
+#     return render(request, "view_category.html", context)
+
+def view_by_category(request, id:int):
+    category = Category_Model.objects.get(id=id)
+    gifs_list = category.gifs.all()
+    context = {'gifs_list': gifs_list, 'category': category}
+    return render(request, "view_category.html", context)

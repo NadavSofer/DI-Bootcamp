@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gif_app.views import Homepage, add_gif, add_category
+from gif_app.views import Homepage, add_gif, add_category, view_all, view_by_category, view_by_gif
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Homepage, name = 'homepage'),
     path('add_gif/', add_gif, name = 'add_gif'),
-    path('add_category/', add_category, name ='add_category')
+    path('add_category/', add_category, name ='add_category'),
+    path('view_all/', view_all, name ='view_all'),
+    path('view_category/<int:id>/', view_by_category, name ='view_category'),
+    path('view_gif/<int:id>/', view_by_gif, name ='view_gif'),
 ]
