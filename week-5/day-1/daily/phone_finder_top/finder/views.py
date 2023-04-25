@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from.models import Person
+from.forms import add_person_form
+from django.http import HttpResponse
 # Create your views here.
 
 def person_name(request, name):
@@ -14,6 +16,26 @@ def person_number(request, phone):
 
 
 
+def add_person(request):
+    form = add_person_form()
+
+    if request.method == 'POST':
+        filled_form = add_person_form(request.POST)
+
+        if filled_form.is_valid:
+            filled_form.save()
+            return HttpResponse('saved')
+        else:
+            return HttpResponse('filled_form')
+
+    if request.method == 'GET':
+        context = {'form': form}
+        return render(request, "add_person.html", context)
+
+
+
+
+# ---------------------------------------------------------------------------
 
 
 def search(model, value):
