@@ -5,4 +5,9 @@
 <h3>{{gif.title}}</h3>
 <img src="{{gif.url}}" alt="a gif">
 <br>
+<input type="submit" value="Like" name="like">
+<input type="submit" value="Dislike" name="dislike">
+<span>{{gif.likes}}</span>
+<br>
+<a href="{% url 'homepage' %}">back</a>
 {%endblock%}

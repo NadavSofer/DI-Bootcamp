@@ -20,7 +20,7 @@ from gif_app.views import Homepage, add_gif, add_category, view_all, view_by_cat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Homepage, name = 'homepage'),
+    path('home/', Homepage, name = 'homepage'),
     path('add_gif/', add_gif, name = 'add_gif'),
     path('add_category/', add_category, name ='add_category'),
     path('view_all/', view_all, name ='view_all'),

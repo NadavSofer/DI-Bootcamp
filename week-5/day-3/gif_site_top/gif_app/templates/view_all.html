@@ -2,12 +2,17 @@
 
 {%block content%}
 
-{% for gif in gifs_list %}
+{% for gif, form in gifs_forms %}
     <br>
     <a href="{% url 'view_gif' gif.id %}">{{ gif.title}}</a> 
+    <br>
     <img src="{{gif.url}}" alt="a gif">
     <br>
+    {{form}}
+    <br>
+
 {% endfor %}
+    <a href="{% url 'homepage' %}">back</a>
 {%endblock%}
 
 <!-- <a href="{% url 'animal_specific' animal.id%}">{{animal.name}}</a>  -->

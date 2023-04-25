@@ -6,7 +6,7 @@
         {% csrf_token %}
         {{form.as_p}}
         <br>
-        <input type="submit" value="OK">
+        <button type="submit">Post</button>
     </form>
     <a href="{% url 'homepage' %}">back</a>
 {%endblock%}

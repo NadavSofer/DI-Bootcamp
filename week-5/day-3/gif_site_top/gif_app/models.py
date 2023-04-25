@@ -6,12 +6,13 @@ class Gif_model(models.Model):
     url = models.URLField()
     uploader_name = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now=True)
+    likes = models.IntegerField(default=0)
     def __str__(self) -> str:
         return self.title
 
 class Category_Model(models.Model):
     name = models.CharField(max_length=20, unique=True)
-    gifs = models.ManyToManyField(Gif_model, blank = True)
+    gifs = models.ManyToManyField(Gif_model, blank = True, related_name='categories')
 
     def __str__(self) -> str:
         return self.name
