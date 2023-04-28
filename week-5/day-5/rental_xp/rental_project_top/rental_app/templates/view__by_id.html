@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    {%block content%}
-
-    {%endblock%}
+    {{rental.customer}}:
+    <br>
+    vehicle: {{rental.vehicle}}
+    <br>
+    rental date: {{rental.rental_date}}
+    <br>
+    return date: {{rental.return_date}}
 </body>
 </html>

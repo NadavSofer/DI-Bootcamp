@@ -23,10 +23,18 @@ def add_gif(request):
             categories = form.cleaned_data['categories']
 
             new_gif = Gif_model(title=title, uploader_name=uploader_name, url=url)
+            new_gif.categories.add(*categories)
             new_gif.save()
-            for category in categories:
-                new_gif.categories.add(category)
-                new_gif.save()
+
+
+
+            # for category in categories:
+            #     new_gif.categories.add(category)
+            #     new_gif.save()
+
+
+
+            
             return render(request, "add_gif.html", {"form": GifForm})
     else:
         form = GifForm()

@@ -53,7 +53,7 @@ def preprocess(instances: list[dict]):
 
 HOSTNAME = 'localhost'
 USERNAME = 'postgres'
-PASSWORD = ''
+PASSWORD = 'Ns9517530809'
 DATABASE = 'REST_COUNTRIES'
 
 
@@ -73,7 +73,7 @@ def run_change_query(query: str):
     
     with connection.cursor() as cursor:
         cursor.execute(query)
-        connection.commit()
+        connection.commit(False)
         print("SUCCESS")
 
 

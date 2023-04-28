@@ -31,7 +31,5 @@ class Likes(forms.Form):
     class Meta:
         exclude = ('gif',)
 
-    gif = forms.ModelChoiceField(queryset=Gif_model.objects.all())
-    like = forms.BooleanField()
-    dislike = forms.BooleanField()
-
+    gif = forms.ModelChoiceField(queryset=Gif_model.objects.all(), widget=forms.HiddenInput)
+    like = forms.BooleanField(required=False, widget=forms.HiddenInput)
