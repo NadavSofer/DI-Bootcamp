@@ -1,0 +1,29 @@
+{% extends 'partials/base.html' %}
+{%block content%}
+    <br><br><br>
+    {%for film in films %}
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Title: {{film.title}}</li>
+                <li class="list-group-item">Release date: {{film.release_date}}</li>
+                <li class="list-group-item">
+                    {%for category in film.category.all%}
+                        {{category}} 
+                    {%endfor%}
+                </li>
+                <li class="list-group-item">
+                    {%for director in film.director.all%}
+                        {{director}} 
+                    {%endfor%}
+                </li>
+                <li class="list-group-item">Country of origin: {{film.created_in_country}}</li>
+            </ul>
+            <div class="card-footer">
+                {%for country in film.available_in_countries.all%}
+                    {{country}}, 
+                {%endfor%}
+            </div>
+        </div>
+        <br>
+    {%endfor%}
+{%endblock%}
