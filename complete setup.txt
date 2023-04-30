@@ -1,0 +1,67 @@
+complete setup
+
+
+virtual environment setup:
+
+1. python3 -m venv my_env
+
+2. activate my_env (in terminal --> in cmd because powershell is weird):
+    for powershell:
+        my_env\Script\activate.bat
+        my_env\Script\activate.ps1
+
+    for cmd:
+        my_env\Script\activate <----------------------------------------
+
+3.pip freeze > requirements.txt
+	make sure you have all the things you need
+
+
+4. make .gitignore file and exclude my_env by writing the name of the file
+
+
+
+
+django project setup:
+
+1. install django in environment
+
+2. python -m django startproject project-name
+
+3. rename the outer file to whatever_top
+
+4. python manage.py startapp app-name
+
+5. add app-name to setting.py
+
+6. python manage.py runserver
+
+
+database setup:
+
+1. make the databse
+
+2. copy this to setting.py and fill it up: 
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': '<db_name>',
+            'USER': '<db_username>', ------> postgres
+            'PASSWORD': '<password>',
+            'HOST': '<db_hostname_or_ip>', -----> localhost
+            'PORT': '<db_port>', -----> 5432
+        }
+    }
+
+3. python manage.py migrate:
+    make sure you have psycopg2 installed 
+
+4. python manage.py makemigrations
+
+
+
+
+python manage.py shell
+    import models:
+        from info.models import databases

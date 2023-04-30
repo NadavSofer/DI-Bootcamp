@@ -16,10 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from polls.views import index, profile
+# from polls.views import 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', index),
-    path('profile_user/', profile)
 ]

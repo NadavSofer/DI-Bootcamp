@@ -6,6 +6,8 @@ class AddFilmForm(forms.ModelForm):
         model = Film
         fields = '__all__'
 
+        widgets = {'category' : forms.CheckboxSelectMultiple}
+
 class AddDirectorForm(forms.ModelForm):
     class Meta():
         model = Director
