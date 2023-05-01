@@ -2,7 +2,8 @@ from typing import Any
 from django import forms
 from .models import UserProfile
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from .models import CustomUser
+
 
 
 
@@ -15,5 +16,6 @@ class ProfileForm(forms.ModelForm):
 
 class SignupForm(UserCreationForm):
     class Meta:
-        model = User
-        fields  = ['username', 'first_name', 'last_name', 'password1', 'password2']
+        model = CustomUser
+        fields  = '__all__'
+
