@@ -5,7 +5,7 @@ from .views import profile_view, signup_view, create_profile_view
 urlpatterns = [
     path('login/', LoginView.as_view(template_name = 'login.html'), name= 'login'),
     path('logout/', LogoutView.as_view(template_name = 'logout.html'), name= 'logout'),
-    path('profile/<int:pk>', profile_view, name='profile-page'),
+    path('profile/<int:pk>', profile_view.as_view(), name='profile-page'),
     path('signup/', signup_view.as_view(), name='signup'),
     path('create_profile/', create_profile_view, name='create-profile'),
 ]

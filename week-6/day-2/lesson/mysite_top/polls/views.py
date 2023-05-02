@@ -1,22 +1,32 @@
-from typing import Any, Dict
+from typing import Any, Dict, Type
+from django.forms.models import BaseModelForm
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from datetime import date
 from django.views import generic
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 # CRUD - CREATE - RETRIEVE - UPDATE - DELETE
 
-class PostCreateView(generic.CreateView):
-
+class PostCreateView(LoginRequiredMixin, generic.CreateView):
+    login_url = reverse_lazy('login')
     template_name = 'create_post.html'
     model = Post
     form_class = PostForm
     success_url = reverse_lazy("posts-all")
 
-class PostUpdateView(generic.UpdateView):
+    def get_initial(self) -> Dict[str, Any]:
+        user = self.request.user
+        profile = user.profile
+        initial = {'author': profile}
+        return initial
+        
 
+class PostUpdateView(LoginRequiredMixin, generic.UpdateView):
+    login_url = reverse_lazy('login')
     template_name = 'update_post.html'
     model = Post
     form_class = PostForm

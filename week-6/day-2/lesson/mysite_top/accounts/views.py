@@ -19,22 +19,25 @@ class signup_view(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'sign_up.html'
 
-def profile_view(request):
+def profile_redirect_view(request):
+
     user = request.user
     if hasattr(user, 'profile'):
-        return redirect('posts-all')
+        return redirect('profile-page', user.profile.id)
     else:
         return redirect('create-profile')
 
+def create_profile_view(request):
 
-def create_profile_view(request): # ----------------------> doesn't work
-    if request.method == 'post':
+    if request.method == 'POST':
         form = ProfileForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('posts-all')
-        user = request.user
-        form = ProfileForm(initial = {'user': user})
-        context = {'form': form}
-        return render(request, 'create_profile.html', context)
+
+    user = request.user
+    form = ProfileForm(initial={'user': user})
+
+    context = {'form': form}
+    return render(request, 'create_profile.html', context)
 
