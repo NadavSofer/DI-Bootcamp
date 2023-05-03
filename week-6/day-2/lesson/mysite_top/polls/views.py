@@ -36,17 +36,11 @@ class PostUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("posts-all")
 
 class PostListView(generic.ListView):
-
     template_name = 'post_list.html'
     context_object_name = 'posts'
     model = Post
-
-    
-    
     def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
-
-        
         user = self.request.user
         if hasattr(user, 'profile'):
             posts = self.get_queryset()
@@ -56,7 +50,6 @@ class PostListView(generic.ListView):
         return context
 
 class PostView(generic.DetailView):
-
     template_name = 'post.html'
     context_object_name = 'post'
     model = Post

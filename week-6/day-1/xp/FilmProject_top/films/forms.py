@@ -12,3 +12,4 @@ class AddDirectorForm(forms.ModelForm):
     class Meta():
         model = Director
         fields = '__all__'
+
