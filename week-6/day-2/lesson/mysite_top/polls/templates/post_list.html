@@ -12,16 +12,29 @@
         <br>
         hello {{user}}
         <br>
-        {{current_date}}
-        <h1>POST LIST</h1>
-        {%for post in posts%}
+        <h1>POST LIST:</h1>
+        {%for posts, post_comment in posts_comment%}
             <br> 
                 {{post}}
             <br>
+            {%for comment in comments.all%}
+                {{comment}}
+            {%endfor%}
+            <form action="{% url 'add-comment' %}" method="post">
+                {%csrf_token%}
+                {{post_comment}}
+                <button type="submit">submit</button>
+            </form>
         {%endfor%}
     {%else%}
-        forbidden
-        {%endif%}
+    <a href="{%url 'login' %}">login</a>
+    <h1>POST LIST:</h1>
+        {%for item in post%}
+            <br> 
+                {{item}}
+            <br>
+            {%endfor%}
+    {%endif%}
 
 </body>
 </html>
