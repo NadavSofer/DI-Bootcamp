@@ -1,3 +1,5 @@
+from typing import Any, Optional
+from django.db import models
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView
@@ -41,6 +43,17 @@ def UpdateProfile(request):
 
     context = {'form': form}
     return render(request, 'profile_update.html', context)
+
+
+class UpdateProfileView(UpdateView):
+    model = UserProfile
+    form_class = ProfileForm
+    template_name = 'profile_update.html'
+    success_url = 'posts-all'
+
+    def get_object(self):
+        return self.request.user.profile
+
 
 # class UpdateProfileView(UpdateView):
 #     template_name = 'profile_update.html'
