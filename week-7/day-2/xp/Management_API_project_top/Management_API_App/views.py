@@ -4,8 +4,12 @@ from rest_framework.generics import GenericAPIView , ListAPIView , DestroyAPIVie
 from .models import Employee , Department , Task , Project
 from .serializers import EmployeeSerializer , ProjectSerializer , TaskSerializer , DepartmentSerializer
 from rest_framework import mixins
+from rest_framework.permissions import IsAuthenticated
+from .permissions import IsDepartmentAdmin
+
 # Create your views here.
 class EmployeeListAPIView(ListAPIView):
+    permission_classes = (IsDepartmentAdmin, IsAuthenticated, )
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     
@@ -28,6 +32,7 @@ class EmployeeCreateAPIView(mixins.ListModelMixin, CreateAPIView):
 
 
 class EmployeeRetrieveAPIView(mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin, RetrieveAPIView):
+    permission_classes = (IsDepartmentAdmin, )
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     def put(self, request , *args , **kwargs):
@@ -37,6 +42,7 @@ class EmployeeRetrieveAPIView(mixins.UpdateModelMixin, mixins.DestroyModelMixin,
 
 
 class DepartmentListAPIView(ListAPIView):
+    permission_classes = (IsDepartmentAdmin, )
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     
@@ -58,6 +64,7 @@ class DepartmentCreateAPIView(mixins.ListModelMixin, CreateAPIView):
 
 
 class DepartmentRetrieveAPIView(mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin, RetrieveAPIView):
+    permission_classes = (IsDepartmentAdmin, )
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     def put(self, request , *args , **kwargs):
@@ -98,6 +105,7 @@ class ProjectRetrieveAPIView(mixins.UpdateModelMixin, mixins.DestroyModelMixin, 
 
 
 class TaskListAPIView(ListAPIView):
+    permission_classes = (IsDepartmentAdmin, )
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
@@ -119,6 +127,7 @@ class TaskCreateAPIView(mixins.ListModelMixin, CreateAPIView):
 
 
 class TaskRetrieveAPIView(mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin, RetrieveAPIView):
+    permission_classes = (IsDepartmentAdmin, )
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     def put(self, request , *args , **kwargs):

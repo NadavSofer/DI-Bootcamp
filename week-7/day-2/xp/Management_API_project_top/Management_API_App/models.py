@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Department(models.Model):
@@ -9,10 +10,12 @@ class Department(models.Model):
         return self.name
 
 class Employee(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, related_name='employee_user')
     name = models.CharField(max_length=50)
     email = models.EmailField
     phone_number = models.CharField(max_length=50)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    department_administrator = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.name
@@ -36,4 +39,3 @@ class Task(models.Model):
 
     def __str__(self) -> str:
         return self.name
-

@@ -44,7 +44,6 @@ class ReportRetrieve(mixins.DestroyModelMixin, mixins.UpdateModelMixin, Retrieve
     
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
-    
 
 
 class ReporterView(ListAPIView):

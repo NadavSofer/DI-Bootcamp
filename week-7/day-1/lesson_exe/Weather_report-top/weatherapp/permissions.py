@@ -16,3 +16,4 @@ class report3(permissions.BasePermission):
         if obj.location.lower() == 'place' and request.user.username == 'nadav':
             return False
         return True
+    
