@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from weatherapp.views import ReportView
+from weatherapp.views import  PostListView, ReportRetrieve, ReporterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/report/', ReportView.as_view(), name='post-list')
+    path('api/report/', PostListView.as_view(), name='post-list'),
+    path('api/report/<int:pk>/', ReportRetrieve.as_view(), name='report'),
+    path('api/Reporter/<int:pk>/', ReporterView.as_view(), name='Reporter')
 ]

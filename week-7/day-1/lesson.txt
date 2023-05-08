@@ -1,0 +1,20 @@
+>>> from weatherapp.models import Report
+>>> report = Report(location='Ramat Gan', temperature=22.0, weather_type='rainy')
+>>> report.save()
+>>> report
+<Report: Ramat Gan, 22.0>
+>>> from weatherapp.serializers import ReportSerializer
+>>> serializer = ReportSerializer(report)
+>>> serializer.data
+{'id': 1, 'location': 'Ramat Gan', 'temperature': 22.0, 'created_at': '2023-05-07T08:49:48.356614Z', 'weather_type': 'rainy'}
+>>> from rest_framework.renderers import JSONRenderer
+>>> content = JSONRenderer().render(serializer.data)
+>>> content 
+b'{"id":1,"location":"Ramat Gan","temperature":22.0,"created_at":"2023-05-07T08:49:48.356614Z","weather_type":"rainy"}'
+>>> from rest_framework.parsers import JSONParser
+>>> import io
+>>> stream = io.BytesIO(content)
+>>> my_data = JSONParser().parse(stream)
+>>> decerializer = ReportSerializer(data=my_data)
+>>> decerializer.is_valid()
+True
