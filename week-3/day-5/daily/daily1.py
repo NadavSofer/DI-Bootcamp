@@ -14,5 +14,3 @@ di_response = response_time('http://learn.di-learning.com/courses/')
 print(youtube_response)
 print(github_response)
 print(di_response)
-
-
