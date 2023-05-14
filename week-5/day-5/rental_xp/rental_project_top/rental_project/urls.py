@@ -16,11 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rental_app.views import display_rental, display_rental_by_id, add_rental
-
+from rental_app.views import (display_rental, display_rental_by_id, add_rental, 
+                            CustomerListView, CustomerDetailView, CustomerCreateView, 
+                            VehicleListView, VehicleDetailView, VehicleCreateView
+                            )
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rent/rental/',display_rental),
     path('rent/rental/<int:id>', display_rental_by_id),
-    path('add_rental/', add_rental)
+    path('add_rental/', add_rental),
+    path('rent/customer/', CustomerListView.as_view(), name='CustomerList'),
+    path('rent/customer/<pk>/', CustomerDetailView.as_view(), name='customer'),
+    path('rent/customers/add/', CustomerCreateView.as_view()),
+    path('rent/vehicle/', VehicleListView.as_view(), name='vehicleList'),
+    path('rent/vehicle/<pk>/', VehicleDetailView.as_view(), name='vehicle'),
+    path('rent/vehicles/add/', VehicleCreateView.as_view())
+
 ]
