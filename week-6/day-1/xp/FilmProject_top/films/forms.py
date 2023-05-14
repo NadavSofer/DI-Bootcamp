@@ -1,5 +1,5 @@
 from django import forms
-from .models import Director, Country ,Category, Film
+from .models import Director, Country ,Category, Film, Reviews
 
 class AddFilmForm(forms.ModelForm):
     class Meta():
@@ -13,3 +13,10 @@ class AddDirectorForm(forms.ModelForm):
         model = Director
         fields = '__all__'
 
+class ReviewForm(forms.ModelForm):
+    class Meta():
+        model = Reviews
+        fields = '__all__'
+        widgets = {
+            'rating': forms.NumberInput(attrs={'class': 'form-control', 'min': '1', 'max': '5'}),
+        }

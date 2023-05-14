@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from films.views import addFilm, addDirector, homepage, FilmUpdateView, DirectorUpdateView, FilmDeleteView, DirectorDeleteView
+from films.views import addFilm, addDirector, homepage, FilmUpdateView, DirectorUpdateView, FilmDeleteView, DirectorDeleteView, FilmDetailView, DirectorDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('delete_film/<int:pk>', FilmDeleteView.as_view(), name= 'delete_film'),
     path('delete_director/<int:pk>', DirectorDeleteView.as_view(), name= 'delete_director'),
+    path('film/<int:pk>', FilmDetailView.as_view(), name= 'film-detail'),
+    path('director/<int:pk>', DirectorDetailView.as_view(), name= 'director'),
 ]
