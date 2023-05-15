@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {%for item in book%}
+        
+        <p>title: {{item.title}}</p> 
+        <p>author: {{item.author}}</p> 
+        <p>published_date: {{item.published_date}}</p> 
+        <p>description: {{item.description}}</p> 
+        <p>page_count: {{item.page_count}}</p> 
+        <p>categories: {{item.categories}}</p> 
+        <img src="{{item.thumbnail_url}}" alt="">
+    {%endfor%}
+
+    <form method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        {%if user.is_authenticated%}
+            <input type="submit" value="post">
+        {%else%}
+            <a href="{%url 'login'%}"><input type="button" value="login to post"></a>
+        {%endif%}
+    </form>
+
+    <p>number of reviews: {{count_rating}}</p>
+    <p>score average: {{avg_rating}}</p>
+    {%for item in review_list%}
+    <br>
+        <div class="reviewbox">
+            <p>{{item.user}}-></p>
+            <div class="title">
+                <p>{{item.review}}</p>
+                <p>{{item.rating}}</p>
+            </div>
+            
+        </div>
+    {%endfor%}
+
+</body>
+</html>
