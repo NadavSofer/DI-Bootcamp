@@ -12,6 +12,13 @@ from rest_framework.status import (HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_R
 
 class StudentView(APIView):
     permission_classes = (IsAdminUser,)
+
+    def get_queryset(self):
+        queryset = Student.objects.all()
+        date_joined_param = self.request.query_params.get('date_joined', None)
+        if date_joined_param is not None:
+            queryset = queryset.filter(date_joined = date_joined_param)
+
     def get(self,request,*args,**kwargs):
         pk = kwargs.get('pk')
         if pk:
