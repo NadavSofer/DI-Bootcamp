@@ -126,12 +126,12 @@
 
 // Exercise 7 : Secret Group -----------------------------------------------------
 
-const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+// const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 
-names.sort()
-out = []
-for (i in names){
-    out.push(names[i][0])
-}
-console.log(out.join(''))
-console.log(names)
+// names.sort()
+// out = []
+// for (i in names){
+//     out.push(names[i][0])
+// }
+// console.log(out.join(''))
+// console.log(names)
