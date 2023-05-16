@@ -81,3 +81,57 @@
 // let database = [thing]
 // let newsfeed = [{username: 'thing'}, {password:123456} , {timeline: 'what'}]
 // console.log(newsfeed);
+// -----------------------------------------------------------------------------------------
+
+// if (1 == '1'){
+//     console.log(true)
+// }
+// else if (2 == 2){
+//     console.log(2)
+// }
+// else{
+//     console.log('else')
+// }
+
+// let res = 1 == '1' ? true : 2 == 2 ? 2 : 'else';
+// console.log(res);
+
+// switch('home'){
+
+//     case 'home':
+//         console.log(true);
+//         break
+
+//     case 'shop':
+//         console.log(false);
+//         break
+
+//     default:
+//         console.log('nope');
+//         break
+// }
+
+// -----------------------------------------------------------------------------------------
+// let arr = [1,2,3,4,5];
+
+// for (let i = 0; i < arr.length; i++) {
+//     const element = arr[i];
+//     console.log(element)
+// }
+
+// for (const x in arr) {
+//     if (Object.hasOwnProperty.call(arr, x)) {
+//         const element = arr[x];
+//         console.log(element)
+//     }
+// }
+
+// for (const x of arr) {
+//     console.log(x)
+// }
+// let x = 0; 
+// while (x < arr.length) {
+//     console.log(arr[x])
+//     x++
+// }
+
