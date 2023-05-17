@@ -3,7 +3,7 @@
 // function isDivisible(num) {
 //     let out = 0
 //     for (let i = 0; i < 500; i++) {
-        
+
 //         if (i % num == 0){
 //             console.log(i);
 //             out += i
@@ -43,6 +43,25 @@
 //     }
 // };
 // myBill();
+
+// Exercise 3 : What’s In My Wallet ? -------------------------------------------------------------------
+
+// function changeEnough(itemPrice, amountOfChange) {
+//     let amount = 0;
+//     for (let i = 0; i < amountOfChange.length; i++) {
+//         let calculate = i == 0 ? amount += 0.25*amountOfChange[0]
+//         : i == 1 ? amount += 0.10*amountOfChange[1]
+//         : i == 2 ? amount += 0.05*amountOfChange[2]
+//         : amount += 0.01*amountOfChange[3]
+//     }
+
+//     let out = amount > itemPrice ? 'you have enough money'
+//     : "you don't have enough money"
+
+//     return out
+// };
+
+// console.log(changeEnough(4.25, [25, 20, 5, 0]));
 
 // Exercise 4 : Vacations Costs -------------------------------------------------------------------
 
