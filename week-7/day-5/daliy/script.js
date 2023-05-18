@@ -1,7 +1,6 @@
 let input = prompt('number ')
 let counter = 0
 for (let i = Number(input); i >= 0; i = i - counter) {
-    
     if (i <= 0 || i-counter < 0){
         console.log(`${i} bottles of beer on the wall \n${i} bottles of beer \nTake ${counter+1} down, pass them around \nno more bottles of beer on the wall`);
     }
