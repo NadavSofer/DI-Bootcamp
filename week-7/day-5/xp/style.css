@@ -1,0 +1,35 @@
+:root{
+    --button-highlight: #0451f5;
+    --text: #f0f8ff;
+}
+
+*{
+    font-family: 'PT Sans', sans-serif;
+    color: var(--text);
+}
+
+body{
+    padding: 50px;
+    background-color: #1d1f2d;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+h6 {
+    margin-top: 0;
+}
+
+button {
+    background-color: var(--button-highlight);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+button:active {
+    background-color: #0234a1;
+}
