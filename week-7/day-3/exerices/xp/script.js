@@ -116,13 +116,19 @@
 // const details = {
 //     my: 'name',
 //     is: 'Rudolf',
-//     the: 'raindeer'
+//     the: 'reindeer'
 // }
 
 // for (i in details){
 //     console.log(i, details[i])
 // }
 
+// const details = { my: 'name', is: 'Rudolf', the: 'reindeer' }; 
+// let output = '';
+
+// for (let key in details) {
+//     output += key + ' ' + details[key] + ' '} 
+// console.log(output.trim()); 
 
 // Exercise 7 : Secret Group -----------------------------------------------------
 
