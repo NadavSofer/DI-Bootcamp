@@ -16,5 +16,3 @@ function move() {
 function stop() {
     clearInterval(id);
 }
-
-
