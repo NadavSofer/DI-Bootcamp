@@ -6,3 +6,10 @@ const inventory = [
     { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
 ];
 
+let getCarHonda = carInventory => carInventory.find(element => element['car_make'] == 'Honda');
+let part1_res = getCarHonda(inventory);
+
+let sortCarInventoryByYear = carInventory => carInventory.sort( (element1, element2) => element1.car_year - element2.car_year);
+let part2_res = sortCarInventoryByYear(inventory);
+
+console.log(part2_res);
