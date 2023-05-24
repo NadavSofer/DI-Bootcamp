@@ -1,7 +1,6 @@
 //Exercise 1 : Print Full Name ----------------------------------------------------------------------
 
-function displayStudentInfo(objUser) {
-    let { first, last } = objUser;
+function displayStudentInfo({ first, last }) {
     return `Your full name is ${first} ${last}.`
 }
 
