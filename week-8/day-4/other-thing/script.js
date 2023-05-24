@@ -25,6 +25,9 @@ let grid_width = 50;
 let grid_height = 25;
 
 
+document.addEventListener('click' , () => {hover ^= true})
+let hover = false
+
 for (let i = 0; i < grid_height; i++) {
     let row = document.createElement('div');
     row.classList.add('row');
@@ -32,10 +35,9 @@ for (let i = 0; i < grid_height; i++) {
         let box = document.createElement('div');
         box.classList.add('box');
         row.appendChild(box);
-
-        box.addEventListener('mouseover', ()=> {
-            box.style.backgroundColor = color_choice;
-        })
+        
+        box.addEventListener('mousedown' , () => {box.style.backgroundColor = color_choice})
+        box.addEventListener('mouseover' , () => {if(hover){box.style.backgroundColor = color_choice}})
     }
     grid_container.appendChild(row);
 }
