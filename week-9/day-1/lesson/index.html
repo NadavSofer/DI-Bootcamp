@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="handle(event)" method="post" name="myForm">
+        username: <input type="text" name="username" value="" required>
+        password: <input type="password" name="password" value="" required>
+        <select name="numselect" id="selectbox">
+            <option value="123">123</option>
+            <option value="456">456</option>
+            <option value="789">789</option>
+        </select>
+        <textarea name="textarea" id="textbox" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="submit">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
