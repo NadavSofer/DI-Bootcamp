@@ -30,12 +30,13 @@ in_a_bit
 
 const promiseResolve = Promise.resolve(3);
 
-promise.then(result => {
+promiseResolve.then(result => {
     console.log(result);
 });
 
 const promiseReject = Promise.reject("Boo!");
 
-promise.catch(error => {
+promiseReject.catch(error => {
     console.log(error); 
 });
+

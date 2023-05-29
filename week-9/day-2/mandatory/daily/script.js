@@ -4,7 +4,7 @@
 //     return new Promise((yep, nope) => {
 //         let out = []
 //         if (arr.every(element => typeof element ==='string')) {
-
+            
 //             arr.forEach(element1 => {
 //                 out.push(element1.toUpperCase())
 //             });
@@ -97,7 +97,7 @@ const morse = `{
     ")": "-.--.-"
 }`
 
-function toJs(arr) {
+const toJs  = arr => {
     return new Promise((yep, nope) => {
         if (arr.length > 0) {
             yep(JSON.parse(arr))
@@ -105,8 +105,8 @@ function toJs(arr) {
         else {
             nope('string empty')
         }
-
-    })
+        
+    }) 
 };
 
 const toMorse = obj => {
@@ -119,11 +119,11 @@ const toMorse = obj => {
                 const element1 = obj[element];
                 out.push(element1)
             }
-            else {
+            else{
                 throw new Error('this character is not in morse code')
             }
         }
-
+        
     }
     return out
 }
@@ -131,13 +131,11 @@ const toMorse = obj => {
 const joinWords = arr => {
     let out = arr.join()
     return out
-}
+} 
 
-toMorse(morse, toJs)
-    .then(result => {
-        const joinedWords = joinWords(result);
-        console.log(joinedWords);
-    })
-    .catch(error => {
-        console.error(error);
-    });
+toJs(morse)
+.then((res)=>{
+    console.log(joinWords(toMorse(res)))
+})
+
+// console.log(joinWords(toMorse(JSON.parse(morse))));
