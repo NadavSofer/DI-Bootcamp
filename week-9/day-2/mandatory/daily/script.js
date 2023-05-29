@@ -111,21 +111,18 @@ const toJs  = arr => {
 
 const toMorse = obj => {
     let input = prompt('input a word');
-    let out = []
-    for (let i = 0; i < input.length; i++) {
-        const element = input[i];
-        for (const j in element) {
-            if (Object.hasOwnProperty.call(element, j)) {
-                const element1 = obj[element];
-                out.push(element1)
-            }
-            else{
-                throw new Error('this character is not in morse code')
+    return new Promise((yep,nope) => {
+        let out = []
+        for (let letter of input) {
+            if (obj.hasOwnProperty(letter)) {
+                    const element1 = obj[letter];
+                    out.push(element1)
+            } else{
+                nope('this character is not in morse code')
             }
         }
-        
-    }
-    return out
+        yep(out)
+    })
 }
 
 const joinWords = arr => {
@@ -134,8 +131,9 @@ const joinWords = arr => {
 } 
 
 toJs(morse)
-.then((res)=>{
-    console.log(joinWords(toMorse(res)))
+.then(toJs_res => {
+    return toMorse(toJs_res)
 })
-
-// console.log(joinWords(toMorse(JSON.parse(morse))));
+.then(toMorse_res => {
+    console.log(joinWords(toMorse_res));
+})
