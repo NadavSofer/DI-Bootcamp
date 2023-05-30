@@ -97,10 +97,11 @@ const morse = `{
     ")": "-.--.-"
 }`
 
-const toJs  = arr => {
+const toJs  = jsonString => {
     return new Promise((yep, nope) => {
-        if (arr.length > 0) {
-            yep(JSON.parse(arr))
+        let JsObj = JSON.parse(jsonString)
+        if (Object.keys(JsObj).length > 0) {
+            yep(JsObj)
         }
         else {
             nope('string empty')
