@@ -14,6 +14,7 @@
     text-align: center;
     color: var(--tc);
 }
+
 body{
     width: 100vw;
     height: 100vh;
@@ -22,6 +23,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .main-container{
     width: 37.5rem;
     height: 90%;
@@ -73,16 +75,20 @@ body{
 }
 input , select{
     width: 80%;
-    font-size: 2rem;
     background-color: var(--bg);
     border: solid 3px var(--highlight2);
     border-radius: 20px;
     padding: 0.5rem;
     margin: 1rem;
+    overflow: hidden;
 }
 
 select {
     font-size: 1.5rem;
+}
+
+input {
+    font-size: 2rem;
 }
 
 #result{
