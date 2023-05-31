@@ -1,0 +1,91 @@
+:root {
+    --pc: #A0A0A0;
+    --bg: #333333;
+    --highlight1: #4CAF50;
+    --highlight2: #0070C0 ;
+    --tc: #F5F5F5;
+}
+
+*{
+    overflow: auto;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: var(--tc);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container{
+    width: 37.5rem;
+    height: 90%;
+    margin: 1rem;
+    background-color: var(--pc);
+    border-radius: 50px;
+    border: 1px solid var(--pc);
+}
+
+.head-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--highlight2);
+}
+
+.top-container, .middle-container{
+    border-top: 5px solid var(--bg);
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/* .middle-container{
+    border-top: 5px solid black;
+    width: 100%;
+    height: 35%;
+} */
+
+.bottom-container{
+    border-top: 5px solid black;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1.5rem;
+}
+.title{
+    font-size: 2rem;
+}
+input , select{
+    width: 80%;
+    font-size: 2rem;
+    background-color: var(--bg);
+    border: solid 3px var(--highlight2);
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+select {
+    font-size: 1.5rem;
+}
+
+#result{
+    margin: 20px;
+    font-size: 50px;
+}
