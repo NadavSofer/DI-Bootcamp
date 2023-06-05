@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 20rem;
+        }
+
+        form label {
+            margin: 0.5rem 0;
+        }
+
+        form button {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Me:</h1>
+    <form action="http://localhost:3000/formData/" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="">Email:</label>
+        <input type="email" name="email" id="email">
+
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
