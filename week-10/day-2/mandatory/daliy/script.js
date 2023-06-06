@@ -1,18 +1,15 @@
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const app = express();
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/aboutMe/:hobby',  (req, res)=>{
     let hobby = req.params.hobby
     if (isNaN(hobby)) {
-        console.log(typeof hobby);
-    } else {
-        return res.status(404).json({Message:'not a word'})
-    }
-    console.log(typeof hobby);
-    res.send('<h1>this is my first response with express.</h1>')
+        return res.status(200).send(`my hobby is ${hobby}`);
+    } 
+    return res.status(404).send("that's not a hobby....");
 })
 
 app.get('/pic',  (req, res)=>{
@@ -25,8 +22,12 @@ app.get('/form',  (req, res)=>{
     
 })
 
-app.get('/formData',  (req, res)=>{
-    
+app.post('/formData',  (req, res)=>{
+    console.log(req.body)
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message;
+    res.send(`${name} sent you a message "${message}" \n this is their email: ${email}`);
 })
 
 app.listen(3000, ()=>{
