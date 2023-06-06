@@ -12,6 +12,7 @@ fs.readFile('steps.txt', 'utf-8', function (err, data) {
 function stepCounter(str) {
     let totalCount = 0;
     let currentPosition = 0;
+    let minusArray = [];
 
     for (const step of str) {
 
@@ -25,8 +26,9 @@ function stepCounter(str) {
         }
 
         if (currentPosition === -1) {
-            console.log(totalCount);
+            minusArray.push(totalCount);
         }
     }
     console.log(currentPosition);
+    console.log(`first time in left side is in: ${minusArray[0]}`);
 }
