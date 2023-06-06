@@ -6,7 +6,7 @@ const db = knex({
         host: 'localhost',
         port: '5432',
         user: 'postgres',
-        password: 'Ns9517530809',
+        password: '',
         database: 'IMDI',
     }
 })
