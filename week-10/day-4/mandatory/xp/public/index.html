@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login & Register</title>
+</head>
+<body>
+    <form class="register-container" name="registerForm" id="registerForm">
+        <h1>register</h1>
+        
+        <label for="first_name">first name : </label>
+        <input type="text" id="first_name" name="first_name" required value="test">
+
+        <label for="last_name">last name : </label>
+        <input type="text" id="last_name" name="last_name" required value="test">
+        
+        <label for="email">email : </label>
+        <input type="email" id="email" name="email" required value="test@gmail.com">
+
+        <label for="username">username : </label>
+        <input type="text" id="username" name="username" required value="test">
+        
+        <label for="password">password : </label>
+        <input type="password" id="password" name="password" required value="test">
+        <button type="submit" id="registerButton">register</button>
+    </form>
+
+    <form class="login-container" name="loginForm">
+        <h1>login</h1>
+        <label for="username">username : </label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">password : </label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" id="loginButton">login</button>
+    </form>
+    <div id="root">
+        
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
