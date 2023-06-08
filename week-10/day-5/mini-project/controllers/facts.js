@@ -12,13 +12,12 @@ let homepage = (req, res) => {
 let search = (req, res) => {
     getData()
         .then(result => {
-            let categories = getCategories();
-            console.log(getCategories());
+            getCategories().then(categories => {
+                console.log(categories);
+            });
             res.render('search', { thing: 'hello' })
         })
 }
-
-
 
 const getData = async () => {
     let feed = await parser.parseURL('https://thefactfile.org/feed/');
