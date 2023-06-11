@@ -4,21 +4,6 @@
     box-sizing: border-box;
 }
 
-.carousel {
-    display: flex;
-    justify-content: center;
-}
-
-.carousel .slide {
-    height: 40vh;
-    width: 5vw;
-}
-
-.carousel .slide img {
-    height: 40vh;
-    width: 5vw;
-}
-
-.legend {
-    opacity: 0.5;
+.card {
+    width: 30rem;
 }

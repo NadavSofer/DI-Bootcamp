@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const ImgCarousel = () => {
     return (
-        <Carousel infiniteLoop autoPlay>
+        <Carousel infiniteLoop autoPlay className='card'>
             <div>
                 <img src="/baby_panda.png" alt='baby panda'/>
                 <p className="legend">baby panda</p>
