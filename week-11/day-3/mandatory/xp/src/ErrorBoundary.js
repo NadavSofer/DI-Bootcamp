@@ -16,6 +16,12 @@ class ErrorBoundary extends React.Component {
         this.setState({hasError:true, error:error, errorInfo:errorInfo})
     }
 
+    shouldComponentUpdate = () => {
+        return true
+    }
+
+
+
     render(){
         if (this.state.hasError) {
             return (
