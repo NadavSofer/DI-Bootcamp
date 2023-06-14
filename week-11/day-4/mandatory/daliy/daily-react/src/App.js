@@ -29,8 +29,6 @@ class App extends React.Component {
             <h1>{this.state.message}</h1>
           </header>
         </div>
-        
-        
       )
     }
 }
