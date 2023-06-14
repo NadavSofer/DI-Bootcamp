@@ -10,7 +10,7 @@ const { _getAllProducts,
     } = require('../controllers/products');
 
 router.get('/products', _getAllProducts);
-router.get('/product/:id', _getProduct);
+router.get('/products/:id', _getProduct);
 router.get('/search', _searchProduct);
 router.post('/products', _insertProduct);
 router.delete('/products/:id', _deleteProduct);
