@@ -17,6 +17,20 @@ class App extends React.Component {
         return data
       }
 
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      fetch('http://localhost:8000/api/hello' ,{
+        method:'POST',
+        body:e.target
+      })
+      .then(data => data.json())
+      .then(message => {
+        console.log(message)
+        this.setState({ message: message })
+      })
+  
+    }
+
     getData().then((res) => {
       this.setState({ message: res });
     });
@@ -28,7 +42,7 @@ class App extends React.Component {
           <header className="App-header">
             <h1>{this.state.message}</h1>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <input type='text'/>
               <input type='submit'/>
             </form>
