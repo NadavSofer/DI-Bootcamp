@@ -16,6 +16,9 @@ class App extends React.Component {
         const data = await res.json()
         return data
       }
+      getData().then((res) => {
+        this.setState({ message: res });
+      });
 
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -28,12 +31,7 @@ class App extends React.Component {
         console.log(message)
         this.setState({ message: message })
       })
-  
     }
-
-    getData().then((res) => {
-      this.setState({ message: res });
-    });
 
     }
     render(){
