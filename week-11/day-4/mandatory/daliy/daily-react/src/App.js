@@ -27,6 +27,11 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <h1>{this.state.message}</h1>
+
+            <form>
+              <input type='text'/>
+              <input type='submit'/>
+            </form>
           </header>
         </div>
       )
