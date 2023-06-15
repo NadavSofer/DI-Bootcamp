@@ -8,6 +8,7 @@ const QuoteGenerator = props =>{
 
     useEffect(()=> {
         generateQuote()
+        document.title = 'Random Quote Generator'
     },[])
 
 
