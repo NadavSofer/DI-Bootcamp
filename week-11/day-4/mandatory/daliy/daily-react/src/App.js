@@ -15,10 +15,13 @@ class App extends React.Component {
         const res = await fetch('http://127.0.0.1:3030/api/hello');
         const data = await res.json()
         return data
+        this.handleSubmit()
       }
       getData().then((res) => {
         this.setState({ message: res });
       });
+
+      
 
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -40,7 +43,7 @@ class App extends React.Component {
           <header className="App-header">
             <h1>{this.state.message}</h1>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
               <input type='text'/>
               <input type='submit'/>
             </form>
