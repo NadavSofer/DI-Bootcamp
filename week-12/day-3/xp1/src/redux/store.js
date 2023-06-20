@@ -7,6 +7,8 @@ const delay = (store) => (next) => (action) => {
         setTimeout(()=> {
             next(action)
         }, 1000)
+    }else{
+        next(action)
     }
 }
 
