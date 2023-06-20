@@ -1,28 +1,32 @@
-const initState = {transactions:[], currentIndex:0};
+import { addToStorage, getToStorage } from "../utils/storage";
 
+const initState = {
+    transactions: getToStorage('transactions'), 
+    currentIndex:-1};
 
 
 export const reducer = (state= initState, action={}) => {
-    const insert = (payload) => {
-        const arr = state.transactions
-        arr.push(payload)
-        return arr
-    }
-
-    
 
     switch (action.type) {
+        case 'USERS':
+            return {...state, users: action.payload}
         case 'INSERT':
-            return{...state, transactions:insert(action.payload)}
+            state.transactions.push(action.payload)
+            addToStorage('transactions', [...state.transactions])
+            return{...state, transactions: [...state.transactions], currentIndex: -1}
         
         case 'UPDATE':
-            return{...state, selected:action.payload}
+            state.transactions[state.currentIndex] = action.payload
+            addToStorage('transactions', [...state.transactions])
+            return{...state, transactions: [...state.transactions], currentIndex: -1}
 
         case 'UPDATE-INDEX':
-            return{...state, selected:action.payload}
+            return{...state, currentIndex:action.payload}
 
         case 'DELETE':
-            return{...state, transactions:state.transactions.splice(action.payload, 1)}
+            state.transactions.splice(action.payload, 1)
+            addToStorage('transactions', [...state.transactions])
+            return{...state, transactions: [...state.transactions], currentIndex: -1}
 
         default:
             return {...state};

@@ -1,54 +1,70 @@
-import { useState } from "react";
-import { connect } from "react-redux";
-import { INSERT, UPDATE, UPDATE_INDEX, DELETE } from "../redux/actions";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { INSERT, UPDATE } from "../redux/actions";
 
 const TransactionForm = props => {
-const [transaction,setTransaction] = useState({
-    accountNumber: '',
-    FSC: 0,
-    name: '',
-    amount: 0
-})
+    const [transaction,setTransaction] = useState({})
+    const currentIndex = useSelector(state=> state.currentIndex)
+    const list = useSelector(state=> state.transactions)
 
-const handleInputChange = (e) => {
-    const data = e.target.value;
-    setTransaction({...transaction, [e.target.name]: data})
-}
+    const dispatch = useDispatch()
 
-const handleSubmit = (e) => {
-    e.preventDefault()
-    props.add(transaction);
-    console.log(props.info);
-    
-}
+    useEffect(()=> {
+        if (currentIndex !== -1) {
+            const trx = list[currentIndex]
+            setTransaction({
+                accountNumber: trx.accountNumber|| '',
+                FSC: trx.FSC|| '',
+                name: trx.name|| '',
+                amount: trx.amount|| ''
+            })
+        }
+    },[currentIndex])
 
-return (
-    <div>
-        <form style={{display:'flex', flexDirection: 'column'}} onSubmit={handleSubmit}>
-            accountNumber: <input type="text" name="accountNumber" id="accountNumber" onChange={handleInputChange}/>
-            FSC: <input type="text" name="FSC" id="FSC" onChange={handleInputChange}/>
-            name: <input type="text" name="name" id="name" onChange={handleInputChange}/>
-            amount: <input type="text" name="amount" id="amount" onChange={handleInputChange}/>
-            <button type="submit">submit</button>
-        </form>
-    </div>
-)
-
-}
-
-const mapStateToProps = state => {
-    return {
-        info: state.transactions
+    const handleInputChange = (e) => {
+        setTransaction({...transaction, [e.target.name]: e.target.value})
     }
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-    add: (payload) => dispatch(INSERT(payload)),
-    update: (payload) => dispatch(UPDATE(payload)),
-    update_index: (index) => dispatch(UPDATE_INDEX(index)),
-    delete: (index) => dispatch(DELETE(index))
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (currentIndex === -1) {
+            dispatch(INSERT(transaction))
+        }
+        else{
+            dispatch(UPDATE(transaction))
+        }
+
+        setTransaction({})
     }
+
+    return (
+        <div>
+            <h2>Transaction List:</h2>
+            <form style={{display:'flex', flexDirection: 'column'}} onSubmit={handleSubmit}>
+                accountNumber: <input name="accountNumber" 
+                    onChange={handleInputChange}
+                    placeholder="account number"
+                    value={transaction.accountNumber}/>
+
+                FSC: <input name="FSC" 
+                    onChange={handleInputChange}
+                    placeholder="FSC"
+                    value={transaction.FSC}/>
+
+                name: <input name="name" 
+                    onChange={handleInputChange}
+                    placeholder="name"
+                    value={transaction.name}/>
+
+                amount: <input name="amount" 
+                    onChange={handleInputChange}
+                    placeholder="amount"
+                    value={transaction.amount}/>
+
+                <input type="submit" value={currentIndex === -1 ? 'Submit' : 'Update'}/>
+            </form>
+        </div>
+    )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TransactionForm)
+export default TransactionForm

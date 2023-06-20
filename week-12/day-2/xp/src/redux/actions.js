@@ -1,3 +1,13 @@
+export const getUser = () => (dispatch, getState) => {
+    console.log(getState().currentIndex);
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data=> {
+        dispatch({type:'USERS', payload:data})
+        })
+    }
+
+
 export const INSERT = transaction => {
     return {
         type: 'INSERT',
