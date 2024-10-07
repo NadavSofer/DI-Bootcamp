@@ -6,9 +6,9 @@ const Home = (props) => {
     const {token} = useContext(appContext);
 
     useEffect(()=>{
-        // if (token) console.log(token);
-        // const decode = jwt_decode(token.token);
-        // console.log(decode.id, decode.email);
+        if (token) console.log(token);
+        const decode = jwt_decode(token.token);
+        console.log(decode.id, decode.email);
 
         fetch('/api/products')
         .then(res=>res.json())

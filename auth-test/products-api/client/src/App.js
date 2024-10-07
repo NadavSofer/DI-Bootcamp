@@ -6,12 +6,12 @@ import LoginRegister from './components/LoginRegister';
 import { useState, createContext } from 'react';
 import { Auth } from './auth/Auth';
 
-export const appContext = createContext(null)
+export const AppContext = createContext(null)
 
 function App() {
   const [token, setToken] = useState(null)
   return (
-    <appContext.Provider value={{token, setToken}}>
+    <AppContext.Provider value={{token, setToken}}>
       <div className="App">
         <Nav/>
         <Routes>
@@ -19,9 +19,8 @@ function App() {
           <Route path='/login' element={<LoginRegister title='Login'/>}/>
           <Route path='/register' element={<LoginRegister title='Register'/>}/>
         </Routes>
-
       </div>
-    </appContext.Provider>
+    </AppContext.Provider>
 
   );
 }
